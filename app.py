@@ -84,13 +84,13 @@ if st.button("Submit"):
     model = joblib.load("Pass_model.pkl")
     stand = joblib.load("Standard__Normal_data.pkl")
 
-    # list=[[1,0,0,0,0,0,0,0]]
+
     list1 = stand.transform(list)
-    # st.write("",list1)
+
     
     Data =  model.predict(list1)
     Data1 = model.predict_proba(list1)
-    # st.write("",Data[0])
+
     if Data[0] == 1:
         st.success("You May Pass In The Exam")
         st.balloons()
