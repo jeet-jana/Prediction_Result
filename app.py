@@ -21,7 +21,7 @@ Student_age = st.slider("___________",0,100,18)
 
 st.write("_________________")
 
-st.subheader("Enter The Study Hour Per Weak")
+st.subheader("Enter The Study Hour Per Week")
 Study_hour = st.number_input("Give Me in Hour",max_value=168)
 
 st.write("_________________")
@@ -74,22 +74,29 @@ import time
 
 
 if st.button("Submit"):
-    st.subheader(f"Prediction Start in 5 second")
-    for i in range(1,6):
-        st.write(i)
-        time.sleep(1)
 
-    st.success("Prediction Start")
-    time.sleep(3)
-    model = joblib.load("Pass_model.pkl")
-    stand = joblib.load("Standard__Normal_data.pkl")
+    st.subheader(f"Prediction Start under 5 second")
 
-
-    list1 = stand.transform(list)
 
     
-    Data =  model.predict(list1)
-    Data1 = model.predict_proba(list1)
+
+    for i in range(5,0,-1):
+        st.write(i)
+        time.sleep(0.5)
+    with st.spinner("Processing"):
+        model = joblib.load("Pass_model.pkl")
+        stand = joblib.load("Standard__Normal_data.pkl")
+
+
+        list1 = stand.transform(list)
+
+
+        Data =  model.predict(list1)
+        Data1 = model.predict_proba(list1)
+        time.sleep(3)
+
+    st.success("Prediction Start")
+    time.sleep(1)
 
     if Data[0] == 1:
         st.success("You May Pass In The Exam")
