@@ -104,6 +104,7 @@ if st.button("Submit"):
     else:
         st.error("Better Luck Next Time🤣🤣🤣")
 
-    st.subheader(f"UID = {Student_id}:")
+
+    st.subheader(f"UID = :{Student_id}")
     st.success(f"Pass probabilty ={Data1[0][1]*100:.2f}% ")
     st.error(f"Fail Probability={Data1[0][0]*100:.2f}%")
