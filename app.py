@@ -71,22 +71,23 @@ st.write("",list)
 import joblib
 import time
 
-audio_file = open("Sound.mp3","rb")
+audio_file = open("Sound1.m4a","rb")
 audio_bytes = audio_file.read()
 
 if st.button("Submit"):
 
-    st.audio(audio_bytes, format="audio/mp3", autoplay=True)
+    st.audio(audio_bytes, format="audio/m4a", autoplay=True)
 
     st.subheader(f"Prediction Start under 5 second")
 
 
     
 
-    for i in range(5,0,-1):
-        st.write(i)
-        time.sleep(0.5)
+    # for i in range(5,0,-1):
+    #     st.write(i)
+    #     time.sleep(0.5)
     with st.spinner("Processing"):
+        time.sleep(6)
         model = joblib.load("Pass_model.pkl")
         stand = joblib.load("Standard__Normal_data.pkl")
 
