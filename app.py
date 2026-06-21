@@ -71,9 +71,12 @@ st.write("",list)
 import joblib
 import time
 
-
+audio_file = open("Sound.mp3","rb")
+audio_bytes = audio_file.read()
 
 if st.button("Submit"):
+
+    st.audio(audio_bytes, format="audio/mp3", autoplay=True)
 
     st.subheader(f"Prediction Start under 5 second")
 
