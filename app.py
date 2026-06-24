@@ -4,7 +4,7 @@ st.title("Student Pass Prediction System")
 
 st.write("This application uses a Machine Learning model trained on student academic and behavioral data to predict whether a student is likely to pass or fail. Enter details such as study hours, attendance, previous performance, and other factors to receive a prediction along with the model's confidence score.")
 
-st.subheader("Enter you UID:")
+st.subheader("Enter you Name:")
 Student_id = st.text_input("")
 
 
@@ -109,6 +109,6 @@ if st.button("Submit"):
         st.error("Better Luck Next Time🤣🤣🤣")
 
 
-    st.subheader(f"UID = :{Student_id}")
+    st.subheader(f"Name = :{Student_id}")
     st.success(f"Pass probabilty ={Data1[0][1]*100:.2f}% ")
     st.error(f"Fail Probability={Data1[0][0]*100:.2f}%")
